@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<section class="contact-hero">
+    <h1>Want to join us?</h1>
+    <p>We're here to help you gain your financial independence</p>
+</section>
+<section class="signup-section">
+    <div class="form-container">
+        <h2>New Member Registration</h2>
+        <form method="POST" action="{{ url_for('signup') }}">
+            <div class="form-group">
+                <label for="full_name">Full Name</label>
+                <input type="text" id="full_name" name="full_name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="id_number">ID Number</label>
+                <input type="number" id="id_number" name="id_number" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="occupation">Occupation</label>
+                <input type="text" id="occupation" name="occupation" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="kra_pin">KRA PIN</label>
+                <input type="text" id="kra_pin" name="kra_pin" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required minlength="8">
+            </div>
+
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" required minlength="8">
+            </div>
+            
+            <button type="submit" class="btn btn-primary" onclick="validatePasswords()">Submit Application</button>
+        </form>
+    </div>
+</section>
+{% endblock %} 

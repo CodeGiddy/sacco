@@ -1,0 +1,41 @@
+{% extends "admin/admin_dashboard.html" %}
+{% block title %}Loan Status Report{% endblock %}
+
+{% block content %}
+<section class="loan-status-report">
+    <div class="admin-content">
+        <h1 class="page-title">Loan Status Report</h1>
+
+    <h2>Total Loans: {{ total_loans }}</h2>
+
+    <table border="1" class="data-table">
+        <thead>
+            <tr>
+                <th>Loan ID</th>
+                <th>Membership Number</th>
+                <th>Loan Amount</th>
+                <th>Amount Paid</th>
+                <th>Balance</th>
+                <th>Status</th>
+                <th>Start Month</th>
+                <th>Due Month</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for loan in loans %}
+                <tr>
+                    <td>{{ loan['id'] }}</td>
+                    <td>{{ loan['membership_number'] }}</td>
+                    <td>{{ loan['amount'] }}</td>
+                    <td>{{ loan['amount_paid'] }}</td>
+                    <td>{{ loan['balance'] }}</td>
+                    <td>{{ loan['status'] }}</td>
+                    <td>{{ loan['start_month'] }}</td>
+                    <td>{{ loan['due_month'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>   
+</section>
+{% endblock %}

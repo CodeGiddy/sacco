@@ -1,0 +1,29 @@
+{% extends "admin/admin_dashboard.html" %}
+{% block title %}
+    Savings Summary Report
+{% endblock %}
+
+{% block content %}
+<div class="admin-content">
+    <h1 class="page-title">Members List</h1>
+    <h2>Total Members: {{ total_members }}</h2>
+    <table class="data-table">
+            <tr>
+                <th>Membership Number</th>
+                <th>Full Name</th>
+                <th>Join Date</th>
+                <th>Actions</th>
+            </tr>
+            {% for member in members %}
+                <tr>
+                    <td>{{ member['membership_number'] }}</td>
+                    <td>{{ member['full_name'] }}</td>
+                    <td>{{ member['join_date'] }}</td>
+                    <td>
+                        <a href="{{ url_for('admin_member_reports', member_id=member['id']) }}">View Reports</a>
+                    </td>
+                </tr>
+            {% endfor %}
+    </table>
+</div>
+{% endblock %}

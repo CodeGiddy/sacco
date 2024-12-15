@@ -1,0 +1,18 @@
+{% extends "member/member_dashboard.html" %}
+{% block title %}
+    Apply for Loan
+{% endblock %}
+
+{% block content %}
+
+    <div class="member-content">
+        <h2>Apply for Loan</h2>
+        <form method="POST" action="{{ url_for('apply_loan') }}" class="member-form">
+            <div class="form-group">
+                <label for="amount">Loan Amount (in shillings):</label>
+                <input type="number" id="amount" name="amount" required min="1" step="0.01">
+            </div>
+            <button type="submit" class="btn btn-primary">Apply for Loan</button>
+        </form>
+    </div>
+{% endblock %} 

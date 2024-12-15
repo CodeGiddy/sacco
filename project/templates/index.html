@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="carousel" style="height: 400px;">
+        <div class="carousel-item active">
+            <div class="carousel-caption">
+                <h1 style="color: #ddd;">Welcome to Mwihoko Self Help Group</h1>
+                <p style="color: #5e26269c;">Empowering our members through financial growth and community support</p>
+            </div>
+        </div>
+        <!-- Add more carousel items -->
+    </div>
+</div>
+
+<section class="features">
+    <div class="container">
+        <h2>Our Services</h2>
+        <div class="feature-grid" style="display: flex; flex-direction: column; align-items: center;">
+            <div class="feature-card" style="width: 70%;">
+                <div style="display: flex; justify-content: space-around; align-items: center;">
+                    <div>
+                        <img src="{{ url_for('static', filename='images/loan.png') }}" alt="" style="width: 200px;height: 200px;">
+                    </div>
+                    <div>
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h3>Low Interest Loans</h3>
+                        <p>Access affordable loans with competitive interest rates</p>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-card" style="width: 70%;">
+                <div style="display: flex; justify-content: space-around; align-items: center;">
+                    <div>
+                        <i class="fas fa-piggy-bank"></i>
+                        <h3>Competitive Savings Rates</h3>
+                        <p>Earn annual dividends on your savings</p>
+                    </div>
+                    <div>
+                        <img src="{{ url_for('static', filename='images/savings.png') }}" alt="" style="width: 200px;height: 200px;">
+                    </div>
+                </div>
+            </div>
+            <div class="feature-card" style="width: 70%;">
+                <div style="display: flex; justify-content: space-around; align-items: center;">
+                    <div>
+                        <img src="{{ url_for('static', filename='images/benevolence.jpeg') }}" alt="" style="width: 200px;height: 200px; border-radius: 15px; margin-left: 15px;">
+                    </div>
+                    <div>
+                        <i class="fas fa-users"></i>
+                        <h3>Benevolence Fund</h3>
+                        <p>Our high-interest savings accounts are designed to help your money grow faster. With our competitive rates, you can maximize your earnings and reach your financial goals sooner.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

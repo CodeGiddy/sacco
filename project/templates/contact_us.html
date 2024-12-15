@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<section class="contact-hero">
+    <h1>Get in Touch</h1>
+    <p>We're here to help and answer any questions you might have</p>
+</section>
+
+<section class="contact-content">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Mwihoko, Kiambu</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+254 115 820 998</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>gideonn660"gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form method="POST" action="{{ url_for('contact_us') }}">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <input type="submit" class="btn btn-primary" value="Send Message">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

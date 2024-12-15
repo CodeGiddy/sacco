@@ -1,0 +1,19 @@
+{% extends "member/member_dashboard.html" %}
+{% block title %}
+    Notifications
+{% endblock %}
+
+{% block content %}
+
+    <div class="member-content">
+        <h1 class="page-title">Notifications</h1>
+        <div class="notification-list" style="max-width: 100%;">
+            {% for notification in notifications %}
+            <div class="notification-item" style="display:flex;max-width: 100%;justify-content: space-between;" >
+                <p class="notification-message">{{ notification.message }}</p>
+                <span class="notification-date">{{ notification.date_added }}</span>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %} 

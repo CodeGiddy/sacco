@@ -1,0 +1,50 @@
+{% extends "admin/admin_dashboard.html" %}
+{% block title %}
+    Messages Report
+{% endblock %}
+
+{% block content %}
+<div class="admin-content">
+    <h1 class="page-title">Messages Report</h1>
+    <div class="messages-report">
+        <table class="data-table messages-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Status</th>
+                    <th>Reply</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for message in messages %}
+                    <tr>
+                        <td>{{ message['name'] }}</td>
+                        <td>{{ message['email'] }}</td>
+                        <td>{{ message['message'] }}</td>
+                        <td>{{ message['status'] }}</td>
+                        <td>
+                            <button class="btn btn-primary" onclick="openReplyModal()">Reply</button>
+                        </td>
+                    </tr>
+
+                    <!-- Reply Modal -->
+                    <div id="replyModal" class="modal">
+                        <div class="modal-content">
+                            <form class="reply-form" method="POST" action="{{ url_for('messages_report') }}">
+                                <input type="hidden" name="email" value="{{ message['email'] }}"> 
+                                <input type="hidden" name="message_id" value="{{ message['id'] }}">
+                                <textarea name="reply_message" rows="3" placeholder="Write your reply..." required></textarea><br>
+                                <button type="submit" class="btn btn-primary">Send Reply</button>
+                                <button type="button" onclick="closeReplyModal()" class="btn btn-primary">Cancel</button>
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+{% endblock %}

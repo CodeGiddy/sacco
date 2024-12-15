@@ -1,0 +1,43 @@
+{% extends "admin/admin_dashboard.html" %}
+{% block title %}
+    Manage notifications
+{% endblock %}
+
+{% block content %}
+<div class="admin-content">
+    <h1 class="page-title">Admin - Manage Notifications</h1>
+    <div class="admin-notifications">
+        <button onclick="addNotifications()" class="btn btn-primary">Add New Notification</button>
+
+        <!-- Display existing notifications -->
+        <h2>Previous Notifications</h2>
+        <table border="1" class="data-table">
+            <thead>
+                <tr>
+                    <th>Message</th>
+                    <th>Date Added</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for notification in notifications %}
+                    <tr>
+                        <td>{{ notification['message'] }}</td>
+                        <td>{{ notification['date_added'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <form id="notification" class="notification-form" action="{{ url_for('admin_notifications') }}" method="POST" style="display: none;">
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea class="form-input" id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Notification</button>
+            <button onclick="removeNotifications()" class="btn btn-primary">Cancel</button>
+        </form>
+    </div>
+    
+</div>
+{% endblock %}
+

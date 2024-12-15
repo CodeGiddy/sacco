@@ -1,0 +1,32 @@
+{% extends "admin/admin_dashboard.html" %}
+{% block title %}
+    Savings Summary Report
+{% endblock %}
+
+{% block content %}
+<div class="admin-content">
+    <h1 class="page-title">Savings Summary Report</h1>
+
+    <h2>Total Savings: {{ total_savings }}</h2>
+
+    <table border="1" class="data-table">
+        <thead>
+            <tr>
+                <th>Membership Number</th>
+                <th>Full Name</th>
+                <th>Savings</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in savings_summary %}
+                <tr>
+                    <td>{{ member['membership_number'] }}</td>
+                    <td>{{ member['full_name'] }}</td>
+                    <td>{{ member['savings'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+

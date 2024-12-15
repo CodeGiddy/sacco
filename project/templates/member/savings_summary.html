@@ -1,0 +1,26 @@
+{% extends "member/member_dashboard.html" %}
+{% block title %}
+    Savings
+{% endblock %}
+
+{% block content %}
+<div class="member-content">
+    <h1 class="page-title">Savings Summary</h1>
+    <p>Your total savings are: {{ total_savings }}</p>
+
+    <h2>Deposit History</h2>
+    <table class="data-table">
+        <tr>
+            <th>Amount Deposited</th>
+            <th>Date of Deposit</th>
+        </tr>
+        {% for deposit in deposits %}
+        <tr>
+            <td>{{ deposit.amount }}</td>
+            <td>{{ deposit.date_added }}</td>
+        </tr>
+        {% endfor %}
+    </table>    
+</div>
+{% endblock %} 
+

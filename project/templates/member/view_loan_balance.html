@@ -1,0 +1,63 @@
+{% extends "member/member_dashboard.html" %}
+{% block title %}
+    Loan Balance
+{% endblock %}
+
+{% block content %}
+<div class="member-content">
+    <h1 class="page-title">Loan Balance</h1>
+    <div class="loan-details">
+        <div class="loan-summary">
+            <p class="loan-balance">Your current loan balance is: {{ loan.balance }}</p>
+        </div>
+    
+        <h2>Loan Details</h2>
+        <table class="data-table loan-table">
+            <tr>
+                <th>Amount</th>
+                <th>Amount Paid</th>
+                <th>Balance</th>
+                <th>Start Month</th>
+                <th>Due Month</th>
+            </tr>
+            <tr>
+                <td>Ksh {{ loan.amount }}</td>
+                <td>Ksh {{ loan.amount_paid }}</td>
+                <td>Ksh {{ loan.balance }}</td>
+                <td>{{ loan.start_month }}</td>
+                <td>{{ loan.due_month }}</td>
+            </tr>
+        </table>
+       
+        <h2>Loan Payments</h2> 
+        <table class="data-table loan-table">
+            <tr>
+                <th>Amount paid</th>
+                <th>Payment date</th>
+                <th>Remaining Balance</th>
+            </tr>
+            {% for payment in payments %}
+            <tr>
+                <td>{{ payment.amount_paid }}</td>
+                <td>{{ payment.payment_date }}</td>
+                <td>{{ payment.remaining_balance }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    
+        <h2>Loan Deductions</h2>
+        <table class="data-table loan-table">
+            <tr>
+                <th>Amount Deducted</th>
+                <th>Date Added</th>
+            </tr>
+            {% for deduction in loan_deductions %}
+            <tr>
+                <td>{{ deduction.amount_deducted }}</td>
+                <td>{{ deduction.date_added }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %} 

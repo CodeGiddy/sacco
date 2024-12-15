@@ -1,0 +1,95 @@
+{% extends "member/member_dashboard.html" %}
+{% block title %}
+    Personal Details
+{% endblock %}
+
+{% block content %}
+<div class="member-content">
+    <div style="display:flex;justify-content: space-between;flex-shrink: 1;flex-grow: 1;flex-wrap: wrap;">
+        <h1 class="page-title">Personal Details</h1>
+        <div style="display: inline-flex;justify-content:space-between;">
+            <button onclick="toggleForm()" class="btn btn-primary" style="margin-right: 25px;">Update Details</button>
+            <button onclick="toggleFormPassword()" class="btn btn-primary">Change Password</button>
+        </div>
+    </div>
+    
+    <div id="updateForm" class="update-form" display="none">
+        <form class="member-form" method="POST" action="{{ url_for('view_personal_details') }}">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{ user.email }}">
+
+            <label for="phone_number">Phone Number:</label>
+            <input type="text" id="phone_number" name="phone_number" value="{{ user.phone_number }}">
+
+            <label for="occupation">Occupation:</label>
+            <input type="text" id="occcupation" name="occupation" value="{{ user.occcupation }}">
+
+            <button type="submit" class="btn btn-primary">Update Details</button>
+            <button type="button" onclick="toggleForm()" class="btn btn-primary">Cancel</button>
+        </form>
+    </div>
+
+    <!-- Form to change password -->
+    <div id="changePassword" class="update-form" style="display:none;">
+        <h2>Change Password</h2>
+        <form class="member-form" method="POST" action="{{ url_for('change_password') }}">
+            <label for="current_password">Current Password:</label>
+            <input type="password" id="current_password" name="current_password" required>
+
+            <label for="new_password">New Password:</label>
+            <input type="password" id="new_password" name="new_password" required>
+
+            <label for="confirm_password">Confirm New Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+
+            <button type="submit" class="btn btn-primary">Change Password</button>
+            <button type="button" onclick="toggleFormPassword()" class="btn btn-primary">Cancel</button>
+        </form>
+    </div>
+
+    <table class="data-table">
+        <tr>
+            <th>Field</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>{{ user.full_name }}</td>
+        </tr>
+        <tr>
+            <th>Membership Number</th>
+            <td>{{ user.membership_number }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+            <th>Phone Number</th>
+            <td>{{ user.phone_number }}</td>
+        </tr>
+        <tr>
+            <th>KRA Pin</th>
+            <td>{{ user.kra_pin }}</td>
+        </tr>
+        <tr>
+        <tr>
+            <th>ID Number</th>
+            <td>{{ user.id_number }}</td>
+        </tr>
+        </tr>
+            <th>Occupation</th>
+            <td>{{ user.occupation }}</td>
+        </tr>
+        <tr>
+            <th>Join Date</th>
+            <td>{{ user.join_date }}</td>
+        </tr>
+        <tr>
+            <th>Membership Days</th>
+            <td>{{ user.membership_days }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %} 
+

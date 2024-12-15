@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mwihoko SACCO - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylez.css') }}">  
+</head>
+<body>
+    <!-- templates/member/member_dashboard.html -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="{{ url_for('view_personal_details') }}"><h1 style="font-size: large;">Welcome, {{ session['user']['full_name'] }}</h1></a>
+        </div>
+        <div class="burger"></div> 
+        <div class="nav-links-wrapper">
+            <div class="nav-links" style="display: flex;flex-shrink: 1;flex-grow: 1;">
+                <a href="{{ url_for('view_personal_details') }}">View Personal Details</a>
+                {% if session.get('has_active_loans') %}
+                    <a href="{{ url_for('view_loan_balance') }}">Loan Balance</a>
+                {% endif %}
+                <a href="{{ url_for('view_notifications') }}">Notifications</a>
+                {% if session.get('loan_eligible') and not session.get('has_active_loans') %}
+                    <a href="{{ url_for('apply_loan') }}">Loan Application and Eligibility</a>
+                {% endif %}
+                <a href="{{ url_for('deposit') }}">Deposit Funds</a>
+                <a href="{{ url_for('savings_summary') }}">Savings Summary</a>
+                <a href="{{ url_for('logout') }}">Logout</a>  
+            </div>
+        </div>
+    </nav>
+    
+
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mwihoko SACCO. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 

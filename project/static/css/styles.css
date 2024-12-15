@@ -1,0 +1,575 @@
+/* ============================= */
+/* Common Styles (All Pages) */
+/* ============================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Common Table Styles */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.data-table th,.data-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.data-table th {
+    background-color: #f4f4f4;
+}
+.data-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.data-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Common Form Styles */
+.form-group {
+    margin-bottom: 15px;
+}
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Common Button Styles */
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn-primary {
+    background-color: #8B4513;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #DEB887;
+}
+
+/* ============================= */
+/* Admin-Specific Styles */
+/* ============================= */
+
+/* Admin Dashboard Layout */
+.admin-content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.page-title {
+    color: #8B4513;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Admin Tables */
+.admin-content .data-table {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Admin Notifications Page */
+.admin-notifications {
+    margin: 20px 0;
+}
+.notification-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+/* Messages Report Page */
+.messages-report {
+    margin: 20px 0;
+}
+.messages-table td {
+    vertical-align: middle;
+}
+
+/* Modal Styles for Reply */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+}
+.reply-form {
+    padding: 15px;
+}
+
+/* Admin Member Reports */
+.member-reports {
+    margin-top: 20px;
+}
+.member-reports h2 {
+    color: #8B4513;
+    margin: 20px 0 10px 0;
+}
+
+/* Loan Status Report */
+.loan-status-report {
+    margin-top: 20px;
+}
+
+/* Deposit Activity Report */
+.deposit-activity {
+    margin-top: 20px;
+}
+
+/* Savings Summary Report */
+.savings-summary {
+    margin-top: 20px;
+}
+
+/* Admin Forms */
+.admin-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 4px;
+    max-width: 600px;
+    margin: 20px 0;
+}
+.admin-form .form-group {
+    margin-bottom: 15px;
+}
+.admin-form textarea {
+    min-height: 100px;
+}
+
+/* Admin Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+.action-button {
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    background-color: #8B4513;
+}
+.action-button:hover {
+    background-color: #DEB887;
+}
+
+/* ============================= */
+/* Member-Specific Styles */
+/* ============================= */
+
+/* Member Dashboard Layout */
+.member-content {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+/* Member Personal Details */
+.member-details table {
+    margin: 20px 0;
+}
+.update-form {
+    display: none;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+.member-form {
+    max-width: 500px;
+    margin: 20px 0;
+}
+
+/* Notifications Styles */
+.notification-list {
+    max-width: 600px;
+    margin: 20px auto;
+}
+.notification-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+.notification-message {
+    margin-bottom: 5px;
+}
+.notification-date {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Loan Balance Page */
+.loan-details {
+    margin: 20px 0;
+}
+.loan-summary {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+.loan-balance {
+    font-size: 1.2em;
+    color: #8B4513;
+    font-weight: bold;
+}
+.loan-table {
+    margin: 20px 0;
+}
+
+/* Deposit Page */
+.deposit-container {
+    max-width: 500px;
+    margin: 20px auto;
+}
+.deposit-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 4px;
+}
+/* Savings Summary */
+.savings-summary-container {
+    margin: 20px 0;
+}
+.total-savings {
+    font-size: 1.2em;
+    color: #8B4513;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+/* Apply Loan Page */
+.loan-application {
+    max-width: 500px;
+    margin: 20px auto;
+}
+.loan-eligibility {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+/* Member Forms Common */
+.member-form .form-group {
+    margin-bottom: 15px;
+}
+.member-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+.member-form input,.member-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.member-form button {
+    margin-top: 10px;
+}
+
+/* ============================= */
+/* Page-Specific Styles */
+/* ============================= */
+
+/* Home Page Styles */
+.hero-section {
+    position: relative;
+    height: 600px;
+    color: #fff;
+    text-align: center;
+}
+.carousel {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.carousel-item.active {
+    opacity: 1;
+}
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.carousel-caption h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Features Section */
+.features {
+    padding: 4rem 0;
+    background-color: #f9f9f9;
+}
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+.feature-card i {
+    font-size: 2.5rem;
+    color: #8B4513;
+    margin-bottom: 1rem;
+}
+
+/* About Page Styles */
+.about-hero {
+    background-color: #8B4513;
+    color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 4rem 2rem;
+}
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+.about-text {
+    padding: 20px;
+}
+.about-text h2 {
+    color: #8B4513;
+    margin-bottom: 15px;
+}
+.about-text ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.about-text li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Contact Page Styles */
+.contact-hero {
+    background-color: #8B4513;
+    color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+.contact-info {
+    padding: 20px;
+}
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.info-item i {
+    color: #8B4513;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+.contact-form {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+/* Sign In/Sign Up Pages */
+.signin-section,.signup-section {
+    padding: 4rem 2rem;
+}
+.form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.form-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+.form-footer a {
+    color: #8B4513;
+    text-decoration: none;
+}
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ============================= */
+/* Responsive Styles */
+/* ============================= */
+
+/* Tablet and smaller screens */
+@media (max-width: 768px) {
+    /* Navigation */
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        margin-top: 1rem;
+    }
+    .nav-links a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    /* Home Page */
+    .carousel {
+        height: 300px;
+    }
+    .carousel-caption h1 {
+        font-size: 2rem;
+    }
+    .hero-section {
+        height: 400px;
+    }
+    .feature-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    /* About Page */
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-image {
+        order: -1;
+    }
+
+    /* Contact Page */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-info {
+        text-align: center;
+    }
+
+    /* Forms */
+    .form-container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    /* Admin Pages */
+    .admin-content {
+        padding: 10px;
+    }
+    .data-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    /* Member Pages */
+    .member-content {
+        padding: 10px;
+    }
+    .loan-details,.deposit-container {
+        margin: 10px;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+    /* Typography */
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Navigation */
+    .nav-brand a {
+        font-size: 1.2rem;
+    }
+
+    /* Forms */
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    /* Tables */
+    .data-table th,.data-table td {
+        padding: 5px;
+        font-size: 0.9rem;
+    }
+
+    /* Buttons */
+    .btn {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 95%;
+        margin: 20px auto;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,91 @@
+{% extends "admin/admin_dashboard.html" %}
+{% block title %}
+    Member Reports
+{% endblock %}
+
+{% block content %}
+<div class="admin-content">
+    <h1 class="page-title">Reports for {{ member['full_name'] }} ({{ member['membership_number'] }})</h1>
+
+    <h2>Member Details</h2>
+    <p>Savings: {{ member['savings'] }}</p>
+
+    <h2>Loans</h2>
+    {% if loans %}
+        <table border="1" class="data-table">
+            <thead>
+                <tr>
+                    <th>Amount</th>
+                    <th>Amount Paid</th>
+                    <th>Balance</th>
+                    <th>Status</th>
+                    <th>Start Month</th>
+                    <th>Due Month</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for loan in loans %}
+                    <tr>
+                        <td>{{ loan['amount'] }}</td>
+                        <td>{{ loan['amount_paid'] }}</td>
+                        <td>{{ loan['balance'] }}</td>
+                        <td>{{ loan['status'] }}</td>
+                        <td>{{ loan['start_month'] }}</td>
+                        <td>{{ loan['due_month'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No loans found.</p>
+    {% endif %}
+
+    <h2>Deposit Activity</h2>
+    {% if deposits %}
+        <table border="1" class="data-table">
+            <thead>
+                <tr>
+                    <th>Amount</th>
+                    <th>Date Added</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for deposit in deposits %}
+                    <tr>
+                        <td>{{ deposit['amount'] }}</td>
+                        <td>{{ deposit['date_added'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No deposit activity found.</p>
+    {% endif %}
+
+    <h2>Loan Repayments</h2>
+    {% if repayments %}
+        <table border="1" class="data-table">
+            <thead>
+                <tr>
+                    <th>Loan ID</th>
+                    <th>Amount Paid</th>
+                    <th>Payment Date</th>
+                    <th>Remaining Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for repayment in repayments %}
+                    <tr>
+                        <td>{{ repayment['loan_id'] }}</td>
+                        <td>{{ repayment['amount_paid'] }}</td>
+                        <td>{{ repayment['payment_date'] }}</td>
+                        <td>{{ repayment['remaining_balance'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No loan repayment history found.</p>
+    {% endif %}
+</div>
+{% endblock %}
